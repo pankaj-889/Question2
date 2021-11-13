@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="WELCOME TO PIZZA HUT"
+        android:textColor="#CF054A"
+        android:textSize="30dp"
+        android:textStyle="bold">
+    </TextView>
+
+    <TextView
+        android:id="@+id/short_text"
+        android:layout_below="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose the items you like"
+        android:textColor="#2E0916"
+        android:textSize="20dp"
+        >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/cafe_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/short_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pizza">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/menu_text"
+        android:layout_below="@+id/cafe_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIZZA LIST : "
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#2E0916"
+        android:textSize="15dp"
+        >
+    </TextView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/menu_items"
+        android:layout_below="@+id/menu_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="#FFC107"
+        android:layout_marginTop="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/checkBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:padding="15dp"
+            >
+            <CheckBox android:id="@+id/checkbox_pizza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extra Loaded Onion Pizza"
+                />
+            <CheckBox android:id="@+id/checkbox_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheese Sweet Corn Pan Pizza"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Addon One Item free : "
+                android:layout_marginLeft="10dp"
+                >
+            </TextView>
+            <RadioGroup
+                android:id="@+id/radio_group"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_extracheese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra Cheese"
+                    />
+                <RadioButton android:id="@+id/radio_drink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cold Drink"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:id="@+id/not_mention_text"
+        android:layout_below="@+id/menu_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type item not mentioned above (optional)"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        >
+    </TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/edit_text_item"
+        android:layout_below="@+id/not_mention_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:boxStrokeColor="#FF0000"
+        app:errorEnabled="true"
+        app:hintTextColor="#E60000">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="20dp"
+            android:hint="Type Here"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/order_btn"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/edit_text_item"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FF0057"
+        android:padding="10sp"
+        android:text="Place Your Order"
+        app:cornerRadius="15dp" />
+</RelativeLayout>
